@@ -1,0 +1,16 @@
+.spacer {
+    flex: 1 1 auto;
+}
+img{
+    height: 18rem;
+}
+.header {
+    background-color: #142143;
+    justify-content: center;
+    height: 10%;
+    color: white;
+}
+span{
+    display: flex;
+    align-items: center;
+}
