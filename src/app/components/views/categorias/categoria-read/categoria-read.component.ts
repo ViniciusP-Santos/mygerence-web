@@ -1,3 +1,5 @@
+import { Categoria } from "./../categoria.model";
+import { CategoriasService } from "./../categorias.service";
 import { Component, OnInit } from "@angular/core";
 
 @Component({
@@ -6,8 +8,20 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./categoria-read.component.css"],
 })
 export class CategoriaReadComponent implements OnInit {
-  constructor() {}
+  categorias: Categoria[] = [];
 
-  ngOnInit(): void {}
   displayedColumns: string[] = ["id", "nome", "descricao", "acoes"];
+
+  constructor(private service: CategoriasService) {}
+
+  ngOnInit(): void {
+    this.findAll();
+  }
+
+  findAll() {
+    this.service.findAll().subscribe((resposta) => {
+      console.log(resposta);
+      this.categorias = resposta;
+    });
+  }
 }
