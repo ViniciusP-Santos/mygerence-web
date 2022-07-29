@@ -13,7 +13,26 @@
     color: #0197da;
 }
 
+button{
+    margin-bottom: 1rem;
+}
+
 .table {
-    
     width: 100%;
+}
+.livros{
+    color: black;
+    margin-left: 1.2rem;
+}
+
+.edit{
+    color: rgb(0, 0, 0);
+}
+.delete{
+    color: rgb(255, 87, 87);
+    margin-left: 10px;
+}
+
+.mat-header{
+    width: 5rem;
 }
