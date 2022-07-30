@@ -1,3 +1,4 @@
+import { CategoriaUpdateComponent } from "./components/views/categorias/categoria-update/categoria-update.component";
 import { CategoriaDeleteComponent } from "./components/views/categorias/categoria-delete/categoria-delete.component";
 import { CategoriaCreateComponent } from "./components/views/categorias/categoria-create/categoria-create.component";
 import { NgModule } from "@angular/core";
@@ -10,6 +11,7 @@ const routes: Routes = [
   { path: "products", component: CategoriaReadComponent },
   { path: "products/create", component: CategoriaCreateComponent },
   { path: "products/delete/:id", component: CategoriaDeleteComponent },
+  { path: "products/update/:id", component: CategoriaUpdateComponent },
 ];
 
 @NgModule({

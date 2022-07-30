@@ -21,6 +21,7 @@ import { CategoriaCreateComponent } from "./components/views/categorias/categori
 import { CategoriaReadComponent } from "./components/views/categorias/categoria-read/categoria-read.component";
 import { HomeComponent } from "./components/views/home/home.component";
 import { CategoriaDeleteComponent } from './components/views/categorias/categoria-delete/categoria-delete.component';
+import { CategoriaUpdateComponent } from './components/views/categorias/categoria-update/categoria-update.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { CategoriaDeleteComponent } from './components/views/categorias/categori
     CategoriaReadComponent,
     CategoriaCreateComponent,
     CategoriaDeleteComponent,
+    CategoriaUpdateComponent,
   ],
   imports: [
     BrowserModule,
