@@ -20,6 +20,7 @@ import { NavbarComponent } from "./components/templete/navbar/navbar.component";
 import { CategoriaCreateComponent } from "./components/views/categorias/categoria-create/categoria-create.component";
 import { CategoriaReadComponent } from "./components/views/categorias/categoria-read/categoria-read.component";
 import { HomeComponent } from "./components/views/home/home.component";
+import { CategoriaDeleteComponent } from './components/views/categorias/categoria-delete/categoria-delete.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { HomeComponent } from "./components/views/home/home.component";
     HomeComponent,
     CategoriaReadComponent,
     CategoriaCreateComponent,
+    CategoriaDeleteComponent,
   ],
   imports: [
     BrowserModule,

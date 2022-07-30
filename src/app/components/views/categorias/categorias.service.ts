@@ -13,16 +13,30 @@ export class CategoriasService {
   baseUrl: String = environment.baseUrl;
   constructor(private http: HttpClient, private _snack: MatSnackBar) {}
 
+  //Listando todas as Categorias
   findAll(): Observable<Categoria[]> {
     //Fazendo requisição do tipo GET
     const url = `${this.baseUrl}/categorias`;
     return this.http.get<Categoria[]>(url);
   }
 
+  //Buscar uma categoria pelo id
+  findById(id: String): Observable<Categoria> {
+    const url = `${this.baseUrl}/categorias/${id}`;
+    return this.http.get<Categoria>(url);
+  }
+
+  //Criando uma nova categoria
   create(categoria: Categoria): Observable<Categoria> {
     //Fazendo requisição do tipo POST
     const url = `${this.baseUrl}/categorias`;
     return this.http.post<Categoria>(url, categoria);
+  }
+
+  //Deletando uma categoria
+  delete(id: String): Observable<void> {
+    const url = `${this.baseUrl}/categorias/${id}`;
+    return this.http.delete<void>(url);
   }
 
   //Validando se a resposta é sucesso ou um error!
