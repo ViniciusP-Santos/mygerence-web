@@ -1,4 +1,4 @@
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { ProdutoService } from "./../produto.service";
 import { Produto } from "./../produto.model";
 import { Component, OnInit } from "@angular/core";
@@ -14,7 +14,11 @@ export class ProdutoReadAllComponent implements OnInit {
   id_cat: String = "";
 
   produtos: Produto[] = [];
-  constructor(private service: ProdutoService, private route: ActivatedRoute) {}
+  constructor(
+    private service: ProdutoService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.id_cat = this.route.snapshot.paramMap.get("id_cat")!;
@@ -26,5 +30,9 @@ export class ProdutoReadAllComponent implements OnInit {
       this.produtos = resposta;
       console.log(resposta);
     });
+  }
+
+  navegarCriarLivro(): void {
+    this.router.navigate([`products/${this.id_cat}/produtos/create`]);
   }
 }

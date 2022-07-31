@@ -1,7 +1,7 @@
 <div class="content">
     <div class="title"><h1>Produtos</h1></div>
 
-    <button class="mat-elevation-z8"  mat-raised-button color="primary" >Novo Produto</button>
+    <button class="mat-elevation-z8" (click)="navegarCriarLivro()" mat-raised-button color="primary" >Novo Produto</button>
 
     <div class="tabela mat-elevation-z8 content-table">
       <table class="table" mat-table [dataSource]="produtos">
@@ -17,11 +17,11 @@
           <td mat-cell *matCellDef="let row"> {{row.nome}} </td>
         </ng-container>
       
-        <!-- Marca column -->
+        <!-- Marca column
         <ng-container matColumnDef="marca">
           <th mat-header-cell *matHeaderCellDef> Marca </th>
           <td mat-cell *matCellDef="let row"> {{row.marca}}  </td>
-        </ng-container>
+        </ng-container> -->
 
         <ng-container matColumnDef="produtos">
           <th mat-header-cell *matHeaderCellDef> VER PRODUTOS </th>

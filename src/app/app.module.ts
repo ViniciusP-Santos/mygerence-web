@@ -1,6 +1,6 @@
 import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatButtonModule } from "@angular/material/button";
 import { MatCardModule } from "@angular/material/card";
 import { MatIconModule } from "@angular/material/icon";
@@ -20,9 +20,10 @@ import { NavbarComponent } from "./components/templete/navbar/navbar.component";
 import { CategoriaCreateComponent } from "./components/views/categorias/categoria-create/categoria-create.component";
 import { CategoriaReadComponent } from "./components/views/categorias/categoria-read/categoria-read.component";
 import { HomeComponent } from "./components/views/home/home.component";
-import { CategoriaDeleteComponent } from './components/views/categorias/categoria-delete/categoria-delete.component';
-import { CategoriaUpdateComponent } from './components/views/categorias/categoria-update/categoria-update.component';
-import { ProdutoReadAllComponent } from './components/views/produtos/produto-read-all/produto-read-all.component';
+import { CategoriaDeleteComponent } from "./components/views/categorias/categoria-delete/categoria-delete.component";
+import { CategoriaUpdateComponent } from "./components/views/categorias/categoria-update/categoria-update.component";
+import { ProdutoReadAllComponent } from "./components/views/produtos/produto-read-all/produto-read-all.component";
+import { ProdutoCreateComponent } from "./components/views/produtos/produto-create/produto-create.component";
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { ProdutoReadAllComponent } from './components/views/produtos/produto-rea
     CategoriaDeleteComponent,
     CategoriaUpdateComponent,
     ProdutoReadAllComponent,
+    ProdutoCreateComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,6 +53,7 @@ import { ProdutoReadAllComponent } from './components/views/produtos/produto-rea
     FormsModule,
     MatInputModule,
     MatSnackBarModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
