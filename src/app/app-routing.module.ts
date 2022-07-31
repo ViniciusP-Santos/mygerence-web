@@ -8,6 +8,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { CategoriaReadComponent } from "./components/views/categorias/categoria-read/categoria-read.component";
 import { HomeComponent } from "./components/views/home/home.component";
 import { ProdutoReadAllComponent } from "./components/views/produtos/produto-read-all/produto-read-all.component";
+import { ProdutoDeleteComponent } from "./components/views/produtos/produto-delete/produto-delete.component";
 
 const routes: Routes = [
   {
@@ -41,6 +42,10 @@ const routes: Routes = [
   {
     path: "products/:id_cat/produtos/:id/update",
     component: ProdutoUpdateComponent,
+  },
+  {
+    path: "products/:id_cat/produtos/:id/delete",
+    component: ProdutoDeleteComponent,
   },
 ];
 
