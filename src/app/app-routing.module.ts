@@ -1,3 +1,4 @@
+import { ProdutoReadComponent } from "./components/views/produtos/produto-read/produto-read.component";
 import { ProdutoUpdateComponent } from "./components/views/produtos/produto-update/produto-update.component";
 import { ProdutoCreateComponent } from "./components/views/produtos/produto-create/produto-create.component";
 import { CategoriaUpdateComponent } from "./components/views/categorias/categoria-update/categoria-update.component";
@@ -46,6 +47,10 @@ const routes: Routes = [
   {
     path: "products/:id_cat/produtos/:id/delete",
     component: ProdutoDeleteComponent,
+  },
+  {
+    path: "products/:id_cat/produtos/:id/read",
+    component: ProdutoReadComponent,
   },
 ];
 

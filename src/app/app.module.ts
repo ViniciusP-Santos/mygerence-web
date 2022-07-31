@@ -26,6 +26,7 @@ import { ProdutoReadAllComponent } from "./components/views/produtos/produto-rea
 import { ProdutoCreateComponent } from "./components/views/produtos/produto-create/produto-create.component";
 import { ProdutoUpdateComponent } from './components/views/produtos/produto-update/produto-update.component';
 import { ProdutoDeleteComponent } from './components/views/produtos/produto-delete/produto-delete.component';
+import { ProdutoReadComponent } from './components/views/produtos/produto-read/produto-read.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { ProdutoDeleteComponent } from './components/views/produtos/produto-dele
     ProdutoCreateComponent,
     ProdutoUpdateComponent,
     ProdutoDeleteComponent,
+    ProdutoReadComponent,
   ],
   imports: [
     BrowserModule,
