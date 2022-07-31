@@ -1,15 +1,16 @@
-import { ActivatedRoute, Router } from "@angular/router";
+import { Observable } from "rxjs";
 import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute, Router } from "@angular/router";
 import { FormControl, Validators } from "@angular/forms";
 import { ProdutoService } from "../produto.service";
 import { Produto } from "../produto.model";
 
 @Component({
-  selector: "app-produto-create",
-  templateUrl: "./produto-create.component.html",
-  styleUrls: ["./produto-create.component.css"],
+  selector: "app-produto-update",
+  templateUrl: "./produto-update.component.html",
+  styleUrls: ["./produto-update.component.css"],
 })
-export class ProdutoCreateComponent implements OnInit {
+export class ProdutoUpdateComponent implements OnInit {
   id_cat: String = "";
   produto: Produto = {
     id: "",
@@ -29,23 +30,38 @@ export class ProdutoCreateComponent implements OnInit {
 
   ngOnInit(): void {
     this.id_cat = this.route.snapshot.paramMap.get("id_cat")!;
+    this.produto.id = this.route.snapshot.paramMap.get("id")!;
+    this.findById();
   }
 
-  create(): void {
-    this.service.create(this.produto, this.id_cat).subscribe(
+  update(): void {
+    this.service.update(this.produto).subscribe(
       (resposta) => {
-        this.router.navigate([`/products/${this.id_cat}/produtos`]),
-          this.service.mensagem("Produto criado com sucesso!");
+        this.router.navigate([`/products/${this.id_cat}/produtos`]);
+        this.service.mensagem("Produto atualizado com sucesso!");
       },
       (err) => {
-        this.router.navigate([`/products/${this.id_cat}/produtos`]),
-          this.service.mensagem("Error ao criar novo livro!");
+        this.router.navigate([`/products/${this.id_cat}/produtos`]);
+        this.service.mensagem(
+          "Falha ao atualizar Produto! Tente novamente mais tarde."
+        );
       }
     );
   }
 
   cancel(): void {
     this.router.navigate([`/products/${this.id_cat}/produtos`]);
+  }
+
+  findById(): void {
+    this.service.findById(this.produto.id!).subscribe(
+      (resposta) => {
+        this.produto = resposta;
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 
   getMessage() {

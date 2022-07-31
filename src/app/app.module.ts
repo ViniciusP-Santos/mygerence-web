@@ -24,6 +24,7 @@ import { CategoriaDeleteComponent } from "./components/views/categorias/categori
 import { CategoriaUpdateComponent } from "./components/views/categorias/categoria-update/categoria-update.component";
 import { ProdutoReadAllComponent } from "./components/views/produtos/produto-read-all/produto-read-all.component";
 import { ProdutoCreateComponent } from "./components/views/produtos/produto-create/produto-create.component";
+import { ProdutoUpdateComponent } from './components/views/produtos/produto-update/produto-update.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { ProdutoCreateComponent } from "./components/views/produtos/produto-crea
     CategoriaUpdateComponent,
     ProdutoReadAllComponent,
     ProdutoCreateComponent,
+    ProdutoUpdateComponent,
   ],
   imports: [
     BrowserModule,

@@ -19,6 +19,16 @@ export class ProdutoService {
     return this.http.get<Produto[]>(url);
   }
 
+  findById(id: String): Observable<Produto> {
+    const url = `${this.baseUrl}/produtos/${id}`;
+    return this.http.get<Produto>(url);
+  }
+
+  update(produto: Produto): Observable<Produto> {
+    const url = `${this.baseUrl}/produtos/${produto.id}`;
+    return this.http.put<Produto>(url, produto);
+  }
+
   create(produto: Produto, id_cat: String): Observable<Produto> {
     const url = `${this.baseUrl}/produtos?categoria=${id_cat}`;
     return this.http.post<Produto>(url, produto);
